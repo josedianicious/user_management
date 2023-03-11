@@ -19,11 +19,11 @@ For running this project in your machine
 *run the command "php artisan serve" and use the generated link(like Development Server (http://127.0.0.1:8000) started) to run the program 
 
 *API List
-get menu
+*get menu
 http://127.0.0.1:8000/api/get-menu
 method : get
 
-user create
+*user create
 http://127.0.0.1:8000/api/user/register
 method : post
 params :
@@ -32,10 +32,12 @@ email
 sex
 profile_image
 
-user login
+*user login
 http://127.0.0.1:8000/api/user/login
 method : post
 params : 
 user_name
 password
+
+*Note: consider the user name as email you have entered and password as 123456
 

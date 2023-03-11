@@ -17,9 +17,9 @@ class AuthController extends Controller
      * param Request request
      * @return user
      */
-    public function userRegister(Request $request){
+    public function userRegister(Request $request)
+    {
         try {
-            //validate user
             $validate_user = Validator::make($request->all(),
             [
                 'name' => "required",

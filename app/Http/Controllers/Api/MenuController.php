@@ -7,7 +7,13 @@ use App\Models\Menu;
 
 class MenuController extends Controller
 {
-    public function getMenu(){
+    /**
+     * function for fetching menu
+     *
+     *
+     */
+    public function getMenu()
+    {
         $menus = Menu::where('parent_id',NULL)->get();
         $menuItem = array();
         if($menus->isEmpty()){
@@ -37,6 +43,10 @@ class MenuController extends Controller
         ],200);
     }
 
+    /**
+     * recursive function for getting sub menu
+     *
+     */
     function subMenus($children){
         $childItem = array();
         $j=0;
