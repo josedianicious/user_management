@@ -21,21 +21,28 @@ For running this project in your machine
 *API List
 *get menu
 http://127.0.0.1:8000/api/get-menu
+
 method : get
 
 *user create
+
 http://127.0.0.1:8000/api/user/register
+
 method : post
-*params :
+
+params :
 name
 email
 sex
 profile_image
 
 *user login
+
 http://127.0.0.1:8000/api/user/login
+
 method : post
-*params : 
+
+params : 
 user_name
 password
 
