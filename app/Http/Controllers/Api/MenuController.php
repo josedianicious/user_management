@@ -8,7 +8,7 @@ use App\Models\Menu;
 class MenuController extends Controller
 {
     public function getMenu(){
-        $menus = Menu::where('parent_id',7)->get();
+        $menus = Menu::where('parent_id',NULL)->get();
         $menuItem = array();
         if($menus->isEmpty()){
             return response()->json([
