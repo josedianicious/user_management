@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace'=>'App\Http\Controllers'],function(){
+    Route::get('/',[UserController::class,'index']);
+    Route::get('user-index',[UserController::class,'index'])->name('user.index');
+    Route::get('user-create',[UserController::class,'create'])->name('user.create');
+    Route::get('user-login',[UserController::class,'login'])->name('user.login');
 });

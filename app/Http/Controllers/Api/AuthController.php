@@ -33,7 +33,7 @@ class AuthController extends Controller
                     'status' => false,
                     'message' => 'validation error',
                     'errors' => $validate_user->errors()
-                ],400);
+                ],200);
             }
             $inputs = array(
                 'name' => $request->name,
@@ -75,14 +75,14 @@ class AuthController extends Controller
                     'status' => false,
                     'message' => 'validation error',
                     'errors' => $validateUser->errors()
-                ],400);
+                ],200);
             }
             $user = UserLogin::where('user_name',$request->user_name)->first();
             if (!$user) {
                 return response()->json([
                     'status' => false,
                     'message' => 'User not exists.',
-                ], 401);
+                ], 200);
             }
             if (Hash::check($request->password,$user->password)){
                 return response()->json([
@@ -94,7 +94,7 @@ class AuthController extends Controller
                 return response()->json([
                     'status' => false,
                     'message' => 'Invalid credentails',
-                ], 401);
+                ], 200);
 
             }
 

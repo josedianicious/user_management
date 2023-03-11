@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'profile_img',
+        'sex'
     ];
 
     /**
@@ -57,7 +58,12 @@ class User extends Authenticatable
         return $this->userLogin->getAttribute('user_name');
     }
 
-    protected  $appends = ['password','user_name'];
+    public function getSexTextAttribute()
+    {
+        if ($this->sex == 1) { return "Male"; } else { return "Female"; }
+    }
+
+    protected  $appends = ['password','user_name','sex_text'];
 
     public function getAuthPassword()
     {
